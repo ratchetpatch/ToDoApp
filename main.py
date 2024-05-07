@@ -136,6 +136,8 @@ class MainApp(MDApp):
             widget.ids.task_button_text.text = node.title
             repeat_container.add_widget(widget)
 
+        self.update_current_screen()
+
     def rebuild_item_list(self, cursor):
         """
         Rebuild the item list from the database.
@@ -393,7 +395,7 @@ class MainApp(MDApp):
         current_container = self.root.ids.current_screen_container
 
         for old_button in repeat_container.children:
-            if old_button.task_node.start_date == date.today():
+            if old_button.task_node.start_date <= date.today():
                 new_button = self._copy_old_button(old_button)
                 self._delete_old_button(old_button, old_button.task_node)
                 current_container.add_widget(new_button)
