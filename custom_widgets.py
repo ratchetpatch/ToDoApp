@@ -2,8 +2,10 @@
 from datetime import date
 
 # Third-party library imports
+from kivy.graphics import Color, RoundedRectangle
 from kivy.metrics import dp
 from kivy.uix.screenmanager import NoTransition
+from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDButton
@@ -11,8 +13,6 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.pickers import MDModalDatePicker
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 from kivymd.uix.textfield import MDTextField
-from kivy.uix.widget import Widget
-from kivy.graphics import Color, RoundedRectangle
 
 
 class TaskButton(MDButton):
