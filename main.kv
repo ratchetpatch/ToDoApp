@@ -155,8 +155,6 @@ MDBoxLayout:
                         padding: dp(0), dp(0), dp(10), dp(0)
                         spacing: dp(10)
 
-                        
-
                         MDLabel:
                             text: "Progress"
                             halign: "center"
@@ -212,15 +210,13 @@ MDBoxLayout:
                     MDBoxLayout:
                         orientation: 'vertical'
                         spacing: dp(5)
-
                         
-
                         MDLabel:
                             id: completed_tasks_label
                             text: "Completed Tasks"
+                            halign: "center"
                             size_hint_y: None
                             height: dp(24)
-                            halign: "center"
 
                         MDBoxLayout:
                             padding: dp(10), dp(10), dp(0), dp(10)
@@ -247,14 +243,12 @@ MDBoxLayout:
                         orientation: 'vertical'
                         spacing: dp(5)
 
-                    
-
                         MDLabel:
                             id: purchased_items_label
                             text: "Purchased Items"
+                            halign: "center"
                             size_hint_y: None
                             height: dp(24)
-                            halign: "center"
 
                         MDBoxLayout:
                             padding: dp(10), dp(10), dp(0), dp(10)
@@ -323,9 +317,8 @@ MDBoxLayout:
 <TaskButton>:
     style: "tonal"
     theme_width: "Custom"
-    height: dp(56)
     size_hint_x: 1
-    pos_hint: {"center_x" : 0.5, "center_y" : 0.5}
+    height: dp(56)
     radius: dp(15)
     on_press: app.display_task_details(self)
 
@@ -335,13 +328,11 @@ MDBoxLayout:
         role: "medium"
         
 
-
 <ItemButton>:
     style: "tonal"
     theme_width: "Custom"
-    height: dp(56)
     size_hint_x: 1
-    pos_hint: {"center_x" : 0.5, "center_y" : 0.5}
+    height: dp(56)
     radius: dp(15)
     on_press: app.display_item_details(self)
 
@@ -349,6 +340,7 @@ MDBoxLayout:
         id: item_button_text
         font_style: "Title"
         role: "medium"
+
 
 <TaskDialog>:
     id: task_dialog_root
@@ -364,14 +356,14 @@ MDBoxLayout:
 
         MDLabel:
             text: "Task Details"
-            size_hint: None, None
-            size: dp(274), dp(24)
-            pos: self.parent.x + dp(25), self.parent.y + dp(446)
             text_size: dp(274), dp(24)
             halign: "center"
             valign: "middle"
             font_style: "Title"
             role: "large"
+            size_hint: None, None
+            size: dp(274), dp(24)
+            pos: self.parent.x + dp(25), self.parent.y + dp(446)
 
         DialogTextFieldAutocomplete:
             id: task_dialog_title
@@ -386,10 +378,10 @@ MDBoxLayout:
         DialogButtonSmall:
             id: task_dialog_repeat_button
             style: "outlined"
+            radius: dp(7)
             size_hint_x: None
             width: dp(95)
             pos: self.parent.x + dp(37), self.parent.y + dp(313)
-            radius: dp(7)
             on_press: task_dialog_root.repeat_button_toggle(self)
 
             MDButtonText:
@@ -401,7 +393,6 @@ MDBoxLayout:
             size_hint_x: None
             width: dp(274)
             pos: self.parent.x + dp(25), self.parent.y + dp(298)
-
 
         MDBoxLayout:
             id: steps_container
@@ -451,20 +442,17 @@ MDBoxLayout:
                         size: dp(155), self.minimum_height
                         pos: self.parent.x + dp(132), self.parent.y + dp(313)
 
-
                         MDLabel:
                             id: current_screen_repeat_toggle_spacer
                             text: 'in'
-                            pos_hint: {"center_y" : 0.5}
                             halign: "center"
 
                         DialogButtonSmall:
                             id: current_screen_repeat_interval
                             style: "filled"
+                            radius: dp(7)
                             size_hint_x: None
                             width: dp(95)
-                            pos_hint: {"center_y" : 0.5}
-                            radius: dp(7)
                             on_press: task_dialog_root.cycle_interval(current_screen_repeat_interval_text)
 
                             MDButtonText:
@@ -520,16 +508,14 @@ MDBoxLayout:
                         MDLabel:
                             id: repeat_screen_repeat_toggle_spacer
                             text: 'on'
-                            pos_hint: {"center_y" : 0.5}
                             halign: "center"
 
                         DialogButtonSmall:
                             id: repeat_screen_repeat_interval
                             style: "filled"
+                            radius: dp(7)
                             size_hint_x: None
                             width: dp(95)
-                            pos_hint: {"center_y" : 0.5}
-                            radius: dp(7)
                             on_press: task_dialog_root.open_date_picker()
 
                             MDButtonText:
@@ -563,10 +549,10 @@ MDBoxLayout:
 
 <DeleteRepeatTaskDialog>:
     id: delete_repeat_task_dialog_root
+    radius: dp(15)
     size_hint: None, None
     height: self.minimum_height
     width: self.minimum_width
-    radius: dp(15)
 
     MDFloatLayout:
         id: delete_repeat_task_dialog_layout
@@ -620,10 +606,10 @@ MDBoxLayout:
 
 <ItemDialog>:
     id: item_dialog_root
+    radius: dp(15)
     size_hint: None, None
     height: self.minimum_height
     width: self.minimum_width
-    radius: dp(15)
 
     MDFloatLayout:
         id: item_dialog_layout
@@ -632,14 +618,14 @@ MDBoxLayout:
 
         MDLabel:
             text: "Item Details"
-            size_hint: None, None
-            size: dp(274), dp(24)
-            pos: self.parent.x + dp(25), self.parent.y + dp(325)
             text_size: dp(274), dp(24)
             halign: "center"
             valign: "middle"
             font_style: "Title"
             role: "large"
+            size_hint: None, None
+            size: dp(274), dp(24)
+            pos: self.parent.x + dp(25), self.parent.y + dp(325)
 
         DialogTextFieldAutocomplete:
             id: item_dialog_title
@@ -686,10 +672,9 @@ MDBoxLayout:
 
                 DialogButtonSmall:
                     id: item_dialog_units_button
+                    radius: dp(7)
                     size_hint_x: None
                     width: dp(95)
-                    pos_hint: {"center_y" : 0.5}
-                    radius: dp(7)
                     on_press: item_dialog_root.cycle_unit(item_dialog_units_text)
 
                     MDButtonText:
@@ -748,9 +733,3 @@ MDBoxLayout:
     MDLabel:
         id: completed_task_count
         halign: "right"
-
-
-
-
-
-
