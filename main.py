@@ -2,8 +2,7 @@
 import os
 from datetime import date, datetime, timedelta
 
-
-# Third-party library imports
+# Third-party imports
 import asynckivy
 from kivy.clock import Clock
 from kivy.core.window import Window
@@ -11,8 +10,7 @@ from kivy.uix.screenmanager import SlideTransition
 from kivy.utils import platform
 from kivymd.app import MDApp
 
-
-# Local application imports
+# Local/application-specific imports
 from custom_widgets import (
     CompletedWidget,
     ItemButton,
