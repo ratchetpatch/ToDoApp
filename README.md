@@ -23,3 +23,4 @@ While the KivyMD framework was useful, as I learned more about it and wanted gre
 * Refactor the TaskDialog widget UI to remove the need for individual screens for current and repeat tasks.
 * Replace the linked lists with direct updates to the SQL database.
 * Separate the auto-complete function into distinct tries for specific text dialog inputs.
+* Re-create app with different framework (creating APK's with buildozer is... complicated)
